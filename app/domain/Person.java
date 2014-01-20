@@ -2,10 +2,10 @@ package domain;
 
 public class Person {
 
-	public double weight;
-	public double size;
+	public double weight;	
+	public double size; // in meters
 	public double bmi;
-	private final static int CENTIMETERS = 100;
+
 	
 	public Person(double weight, double size){
 		this.weight = weight;
@@ -22,15 +22,15 @@ public class Person {
 	 * @return the body mass index.
 	 */
 	private double calculateBodyMassIndex(){
-		return roundOff(weight / ((size / CENTIMETERS) * (size / CENTIMETERS)));
+		return roundOff(weight / ((size) * (size)));
 	}
 	
 	/**
-	 *  keep only one digit after the comma
+	 *  static method to keep only one digit after the comma
 	 * @param pDouble
 	 * @return
 	 */
-	private double roundOff(double pDouble) {
+	public static double roundOff(double pDouble) {
 		return Math.round(pDouble * 10.0) / 10.0;
 	}
 		

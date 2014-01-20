@@ -4,7 +4,9 @@ public class Adviser {
 
 /**
  * Assess in which category a person is
+ * 
  */
+	
 	
 	public static String assessCategory (Person person) {
 		if (person.bmi < 15)
@@ -23,13 +25,30 @@ public class Adviser {
 			return "Obese";
 	}
 	
-	public static String adviceWeight (Person person) {
-		if (person.bmi > 30) {
-			return "TODO";
+	public static boolean assessWeightProblem (Person person) {
+		if (person.bmi < 18.5 || person.bmi > 25 ) 
+			return true;
+		else 
+			return false;
+	}
+	
+	public static double adviceWeight (Person person) {
+		if (person.bmi > 25) {
+			return  Person.roundOff(person.size * person.size * 25);
 		}
 		else if (person.bmi < 18.5 ) {
-			return "TODO";			
+			 return  Person.roundOff(person.size * person.size * 18.5);			
 		}
-		else return "";
+		else return 0.0;
+	}
+	
+	public static double adviceSize (Person person) {
+		if (person.bmi > 25) {
+			return  Person.roundOff(Math.sqrt(person.weight/25));
+		}
+		else if (person.bmi < 18.5 ) {
+			 return  Person.roundOff(Math.sqrt(person.weight/18.5));			
+		}
+		else return 0.0;
 	}
 }
