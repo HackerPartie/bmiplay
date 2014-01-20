@@ -1,0 +1,14 @@
+@* bmi Template File *@
+@(myPerson: domain.Person)
+
+@main("your bmi") {
+		<br>
+		<div class="container well text-center">
+				<p>With a weight of @myPerson.weight kg and a size of
+				@myPerson.size cm, your body mass index is </p>
+				<h1>@myPerson.getBmiAsString()</h1>
+			
+		</div>
+
+	
+	}
