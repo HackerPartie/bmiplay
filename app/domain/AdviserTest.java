@@ -10,7 +10,7 @@ public class AdviserTest {
 		System.out.println("Random Guy" +" ");
 		System.out.println(person.bmi);
 		System.out.println(Adviser.assessCategory(person));
-		System.out.println(Adviser.adviceSize(person));
+		System.out.println(Adviser.adviceWeight(person));
 		System.out.println(Adviser.adviceWeight(person));
 	}
 
